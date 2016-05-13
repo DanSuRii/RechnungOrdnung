@@ -16,6 +16,7 @@ namespace _NS_RECHNUNG
 #define RECHNUNG_PROP(x) x,
 #include "RechnungProperties.h"
 		EPROPERTY_CNT = INVALID,
+		EPROPERTY_INIT = Delimitor,
 	};
 
 
@@ -60,12 +61,12 @@ namespace _NS_RECHNUNG
 		int nRechnungNummer(INVALID_RECHNUNGNUMMER);
 		
 		//initialize PropCur, nexte InitProperty() für die Initialize,mit enum EPROPERTY_INIT
-		EPROPERTY propCur(EPROPERTY::Delimitor);
+		EPROPERTY propCur(EPROPERTY::EPROPERTY_INIT);
 		while ( !std::getline(ifs, strTmp, '\n').eof() )
 		{			
 			if (strTmp == strCmp)
 			{
-				propCur = EPROPERTY::Delimitor;
+				propCur = EPROPERTY::EPROPERTY_INIT;
 				continue;
 			}
 			if (propCur == EPROPERTY::INVALID) 
