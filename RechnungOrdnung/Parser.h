@@ -5,8 +5,9 @@ namespace _NS_RECHNUNG
 
 	class Parser
 	{
-	public:
 		Parser();
+	public:
+		Parser(std::string & filePath);
 		virtual ~Parser();
 	};
 

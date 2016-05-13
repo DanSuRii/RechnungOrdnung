@@ -18,6 +18,8 @@ namespace _NS_RECHNUNG
 	public:
 		Rechnung(KEY_RECHNUNG rhsNummer);
 		virtual ~Rechnung();
+
+		__inline KEY_RECHNUNG GetRechnungNummer() const { return numRechnung; }
 	};
 
 
@@ -32,6 +34,7 @@ namespace _NS_RECHNUNG
 		
 		bool ReportInvalidRechnungNummer( /*out list*/);		
 		bool DoTest(Tester&);
+		bool AddRechnung( Rechnung& );
 
 	private:
 		CONT_RECHNUNG _cont;
