@@ -54,11 +54,22 @@ namespace _NS_RECHNUNG
 		{
 			std::cout << "invalid file path:" << filePath << std::endl;
 			//Reise Exception
+			system("pause");
 			exit(-1);
 			return;
 		}
 		std::string strTmp;
 		std::string strCmp(_DELIMITER);
+
+		//file check
+		std::getline(ifs, strTmp, '\n');
+		if (strTmp != strCmp)
+		{
+			std::cout << "Datai ist keine WWS daten export file." << std::endl;
+			system("pause");
+			exit(-1);
+			return;
+		}
 
 		int nRechnungNummer(INVALID_RECHNUNGNUMMER);
 		

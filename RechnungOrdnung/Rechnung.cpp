@@ -25,6 +25,7 @@ namespace _NS_RECHNUNG
 		return false;
 	}
 
+	//1mal 17052016 passt, 
 	inline bool RechnungMgr::ReportInvalidRechnungNummer()
 	{
 		/* LOGIC
