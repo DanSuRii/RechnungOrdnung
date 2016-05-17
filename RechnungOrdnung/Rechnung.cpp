@@ -28,26 +28,6 @@ namespace _NS_RECHNUNG
 	//1mal 17052016 passt, 
 	inline bool RechnungMgr::ReportInvalidRechnungNummer()
 	{
-		/* LOGIC
-		if (propCur == EPROPERTY::RechnungNummer)
-		{
-		int nTempNummer(nRechnungNummer);
-		nRechnungNummer = stoi(strTmp);
-		if (nTempNummer == INVALID_RECHNUNGNUMMER)
-		continue;
-
-		//nTempNummer must be lesser then nRechnungNummer, Noch nicht Stimmen
-		//Nach dem alle Logic stimmen, es will STIMMEN
-		int nDifference = abs(nTempNummer - nRechnungNummer);
-		if (1 < nDifference)
-		{
-		while (--nDifference != 0)
-		std::cout << ++nTempNummer << ',' ;
-
-		std::cout << std::endl;
-		}
-		}
-		*/
 
 		KEY_RECHNUNG lastNummer( INVALID_RECHNUNGNUMMER );
 		for each(auto& cur in this->_cont)
