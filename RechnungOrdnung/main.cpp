@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include "Rechnung.h"
 #include "Parser.h"
 
@@ -14,6 +15,18 @@ bool Question(std::string& strQuestion )
 int main(int argc, const char* argv[ ])
 {
 	/*
+	char* strString = 
+		"Hello World\n"
+		"world is hello?\n"
+		"im very hello\n"
+		;
+	
+	std::stringstream sstream(strString);
+
+	std::string strLine;
+	bool bEof = std::getline(sstream, strLine).eof();
+	*/
+	/*
 	_NS_RECHNUNG::Tester _tester;
 	_NS_RECHNUNG::Rechnung rechnung(32);
 	_tester();
@@ -27,7 +40,7 @@ int main(int argc, const char* argv[ ])
 	for each(auto& cur in  mapParam)
 		std::cout << cur.first << ".\t" << cur.second.c_str() << std::endl;
 	
-	std::string strPath("C:\\Users\\A.Roennburg\\Documents\\052016 TagesAbschlüss PROGRAMMING\\OLDH60503.DAT");
+	std::string strPath("C:\\Users\\A.Roennburg\\AppData\\Local\\VirtualStore\\OLDH60520.DAT");
 	if (mapParam.count(1) <= 0)
 	{
 		if ( false == Question( std::string( "Use Default path?") ) )
@@ -38,6 +51,6 @@ int main(int argc, const char* argv[ ])
 	
 
 	_NS_RECHNUNG::Parser parser(strPath);
-	_NS_RECHNUNG::RechnungMgr::GetInstance().ReportInvalidRechnungNummer();
+	_NS_RECHNUNG::RechnungMgr::GetInstance().ReportInvalidRechnungNummerSStream();
 	system("pause");
 }

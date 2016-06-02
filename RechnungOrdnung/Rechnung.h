@@ -32,7 +32,8 @@ namespace _NS_RECHNUNG
 			return _Instance;
 		}				
 		
-		bool ReportInvalidRechnungNummer( /*out list*/);		
+		bool ReportInvalidRechnungNummer( /*out list*/);
+		bool ReportInvalidRechnungNummerSStream();
 		bool DoTest(Tester&);
 		bool AddRechnung( Rechnung& );
 

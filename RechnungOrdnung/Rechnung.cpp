@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <sstream>
 #include "Rechnung.h"
 
 namespace _NS_RECHNUNG
@@ -50,6 +50,35 @@ namespace _NS_RECHNUNG
 				std::cout << std::endl;
 			}
 		}
+		return true;
+	}
+
+	bool RechnungMgr::ReportInvalidRechnungNummerSStream()
+	{
+		KEY_RECHNUNG lastNummer( INVALID_RECHNUNGNUMMER );
+		std::stringstream ssOut;
+		for each(auto& cur in this->_cont)
+		{
+			KEY_RECHNUNG curNummer(cur.first),
+						tmpNummer(lastNummer);
+			lastNummer = curNummer;
+			if (tmpNummer == INVALID_RECHNUNGNUMMER
+				|| tmpNummer == curNummer //Worked
+				)
+				continue;
+			
+			int nDiff = abs(tmpNummer - curNummer);
+			
+			if (1 < nDiff)
+			{
+				while (--nDiff != 0)
+					ssOut << ++tmpNummer << ',';
+				
+				ssOut << std::endl;
+			}
+		}
+
+		std::cout << ssOut.str() << std::endl;
 		return true;
 	}
 
