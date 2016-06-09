@@ -1,5 +1,6 @@
 #pragma once
 #include <map>
+#include <vector>
 
 namespace _NS_RECHNUNG
 {
@@ -22,7 +23,13 @@ namespace _NS_RECHNUNG
 		__inline KEY_RECHNUNG GetRechnungNummer() const { return numRechnung; }
 	};
 
+	class RechnungReport
+	{
+		std::string strFileName;
+		std::vector<std::string> strInvalidRG; // Rechnungs nummer what does not exists.
 
+		inline bool isEmpty() { return strFileName.empty() && strInvalidRG.empty(); }
+	};
 	
 	class RechnungMgr
 	{
@@ -34,6 +41,8 @@ namespace _NS_RECHNUNG
 		
 		bool ReportInvalidRechnungNummer( /*out list*/);
 		bool ReportInvalidRechnungNummerSStream();
+		//Todo: ReportInvalidRechnungNummer logic to Extern Function, after USE in Functions
+		bool ReportInvalidRechnungNummer(RechnungReport& outReport);
 		bool DoTest(Tester&);
 		bool AddRechnung( Rechnung& );
 

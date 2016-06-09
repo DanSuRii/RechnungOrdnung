@@ -82,6 +82,11 @@ namespace _NS_RECHNUNG
 		return true;
 	}
 
+	bool RechnungMgr::ReportInvalidRechnungNummer(RechnungReport & outReport)
+	{
+		return false;
+	}
+
 	bool RechnungMgr::DoTest(Tester &)
 	{
 		int LoopCnt( rand()+10 );
