@@ -45,6 +45,7 @@ namespace _NS_RECHNUNG
 		bool ReportInvalidRechnungNummer(RechnungReport& outReport);
 		bool DoTest(Tester&);
 		bool AddRechnung( Rechnung& );
+		bool ReportRGCount();
 
 	private:
 		CONT_RECHNUNG _cont;

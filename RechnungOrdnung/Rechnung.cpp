@@ -107,6 +107,12 @@ namespace _NS_RECHNUNG
 		_cont.insert_or_assign( rechnungNummer, rechnung );
 		return false;
 	}
+
+	bool RechnungMgr::ReportRGCount()
+	{
+		std::cout << "RG Count:" << _cont.size()  << std::endl;
+		return false;
+	}
 	
 	void Tester::operator()()
 	{

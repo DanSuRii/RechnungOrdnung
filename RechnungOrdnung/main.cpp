@@ -51,6 +51,7 @@ int main(int argc, const char* argv[ ])
 	
 
 	_NS_RECHNUNG::Parser parser(strPath);
+	_NS_RECHNUNG::RechnungMgr::GetInstance().ReportRGCount();
 	_NS_RECHNUNG::RechnungMgr::GetInstance().ReportInvalidRechnungNummerSStream();
 	system("pause");
 }
